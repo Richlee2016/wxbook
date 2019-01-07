@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "search": "../../components/search",
+    "ctitle": "../../components/common/title",
+    "block-box-a": "../../components/bookblock/boxA"
+  },
+  "navigationBarTitleText": "熊猫人之书城联盟"
+}

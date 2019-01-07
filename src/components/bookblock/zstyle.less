@@ -1,0 +1,24 @@
+.block-box-a{
+    .box{
+        width: 250px;
+        float: left;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .img{
+        width: 230px;
+        height: 330px;
+    }
+    .txt{
+        padding: 0 20px;
+        font-size: 26px;
+        max-height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        display:block;                     /*内联对象需加*/
+        word-break:keep-all;           /* 不换行 */
+        white-space:nowrap;          /* 不换行 */
+        overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+        text-overflow:ellipsis;   
+    }
+}

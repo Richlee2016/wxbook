@@ -1,0 +1,23 @@
+<block>
+    <view class="index">
+        <search __triggerObserer="{{ _triggerObserer }}"></search>
+        <swiper class="swiper-box" indicator-dots="{{myswipre.indicatorDots}}" loop="{{myswipre.loop}}" autoplay="{{myswipre.autoplay}}" interval="{{myswipre.interval}}" duration="{{myswipre.duration}}">
+            <swiper-item wx:key="img" class="swiper-item" wx:for="{{myswipre.imgUrls}}" wx:for-item="ban">
+                <cover-image src="{{ban.img}}"></cover-image>
+            </swiper-item>
+        </swiper>
+        <view class="nav-bar">
+            <navigator class="bar-box" wx:key="index" wx:for="{{barSet}}" wx:for-item="nav" wx:for-index="index">
+                <cover-image class="bar-icon" src="{{nav.icon}}"></cover-image>
+                <text class="bar-text">{{nav.name}}</text>
+            </navigator>
+        </view>
+        <view class="clear-line"></view>
+        <view class="home-box">
+            <ctitle title="321" __triggerObserer="{{ _triggerObserer }}" label="热" tab="{{true}}" bindontab="tabHandle" __fn_onTab="{{true}}" data-e-ontab-so="this"></ctitle>
+            <view class="book-hot">
+                <block-box-a data="{{Data.hot}}" __triggerObserer="{{ _triggerObserer }}"></block-box-a>
+            </view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,15 @@
+<block>
+    <view class="c-book-title">
+        <text class="title">{{title}}</text>
+        <block wx:if="{{label}}">
+            <text class="label">{{label}}</text>
+        </block>
+        <block wx:if="{{tab}}">
+            <view class="tab">
+                <text class="{{'tab-t ' + (active ? 'active' : '')}}" bindtap="handleTab" data-e-tap-so="this" data-e-tap-a-a="{{1}}">男</text>
+                <text>丨</text>
+                <text class="{{'tab-t ' + (active ? '' : 'active')}}" bindtap="handleTab" data-e-tap-so="this" data-e-tap-a-a="{{2}}">女</text>
+            </view>
+        </block>
+    </view>
+</block>

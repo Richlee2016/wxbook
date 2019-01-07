@@ -1,0 +1,8 @@
+<block>
+    <view class="c-search">
+        <view class="s-icon">
+            <icon class="icon" type="search" size="20"></icon>
+        </view>
+        <input class="s-inp" confirm-type="search" />
+    </view>
+</block>
