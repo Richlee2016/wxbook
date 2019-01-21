@@ -1,15 +1,61 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "book",
-	"description": "book",
+	"projectname": "mybook",
+	"description": "",
 	"appid": "wx578e13801d7e522d",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"minified": false,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "banner详情页",
+					"pathName": "pages/base/banner",
+					"query": "id=11452"
+				},
+				{
+					"id": 1,
+					"name": "channel详情页",
+					"pathName": "pages/base/channel",
+					"query": "id=370"
+				},
+				{
+					"id": -1,
+					"name": "category分类页",
+					"pathName": "pages/base/category",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "rank 排行",
+					"pathName": "pages/base/rank",
+					"query": ""
+				}
+			]
+		}
+	}
 }

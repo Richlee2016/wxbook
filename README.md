@@ -1,2 +1,0 @@
-# wxbook
-wx book app

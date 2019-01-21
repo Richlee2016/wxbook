@@ -1,8 +1,0 @@
-<block>
-    <view class="block-box-a">
-        <view wx:key="cover" class="box" wx:for="{{data.list}}" wx:for-item="box">
-            <image class="img" src="{{box.cover}}" />
-            <text class="txt">{{box.title}}</text>
-        </view>
-    </view>
-</block>
