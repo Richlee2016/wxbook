@@ -10,7 +10,6 @@ export default class Scroll extends Component {
   render () {
     let { isLower } = this.props
     isLower = isLower || false
-    console.log(isLower)
     return (
       <ScrollView
         className='c-scroll'

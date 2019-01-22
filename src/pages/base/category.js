@@ -11,8 +11,10 @@ class Category extends Component {
     navigationBarTitleText: '熊猫人之书城联盟'
   }
 
-  navigateTo (url) {
-    Taro.navigateTo({ url: url })
+  navigateTo (vod) {
+    vod.children.unshift({ label: '全部', category_id: vod.id })
+    this.props.DataBase.SetCategoryGroup(0, vod.children)
+    Taro.navigateTo({ url: `categoryvod?id=${vod.id}` })
   }
 
   componentDidMount () {
@@ -24,7 +26,7 @@ class Category extends Component {
     return (
       <View className='category'>
         <Ctitle title={'男生小说'} />
-        <Ccategory data={Category.male} />
+        <Ccategory data={Category.male} onVod={this.navigateTo} />
         <View className='clear-line' />
         <Ctitle title={'女生小说'} />
         <Ccategory data={Category.female} />

@@ -7,7 +7,7 @@ export default class Block extends Component {
   render () {
     const { data = [] } = this.props
     if (!data) return <View />
-    const mapLines = data.map((info, i) => <Cinfoline key={info.id} info={info} />)
+    const mapLines = data.map((info, i) => <Cinfoline key={i} info={info} />)
     return (
       <View className='block-box-b'>
         {mapLines}

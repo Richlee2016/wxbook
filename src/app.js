@@ -24,7 +24,9 @@ class App extends Component {
       'pages/base/banner',
       'pages/base/channel',
       'pages/base/category',
-      'pages/base/rank'
+      'pages/base/rank',
+      'pages/base/recommend',
+      'pages/base/categoryvod'
     ],
     window: {
       backgroundTextStyle: 'light',

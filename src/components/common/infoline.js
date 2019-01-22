@@ -7,17 +7,19 @@ export default class InfoLine extends Component {
   render () {
     const { info } = this.props
     if (!info) return <View />
+    let categories = info.categories ? info.categories.slice(0, 3) : []
+    const mapCategories = categories.map(o => {
+      return <Text key={o.category_id} className='li'>{o.label}</Text>
+    })
     return (
       <View className='c-book-infoline'>
         <Image className='img' src={info.cover} />
         <View className='right'>
           <Text className='h3'>{info.title}</Text>
-          <Text className='label'>一笔烟云</Text>
-          <Text className='p'>身怀绝技的方少阳，带着对大都市的美好憧憬，本想投靠师娘，却当上了医院妇科的男医生，泡了个美女医生，误...</Text>
+          <Text className='label'>{info.authors}</Text>
+          <Text className='p'>{info.summary}</Text>
           <View className='ul'>
-            <Text className='li'>都市情缘</Text>
-            <Text className='li'>都市生活</Text>
-            <Text className='li'>热血都市</Text>
+            {mapCategories}
           </View>
         </View>
       </View>

@@ -2,7 +2,6 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import Scroll from '../../components/scroll'
 import { observer, inject } from '@tarojs/mobx'
-import { BlockBoxC } from '../../components/bookblock/boxC'
 import { toJS } from 'mobx'
 import './index.less'
 
@@ -25,12 +24,13 @@ class Recommend extends Component {
 
   render () {
     const { DataBase: { Recommend } } = this.props
-    const mapRecommend = Recommend.list.map(o => {
+    const mapRecommend = toJS(Recommend.list).map(o => {
       return (
         <View className='rec-box' key={o.id}>
+          <View className='clear-line' />
           <View className='title'>{o.name}</View>
-          <View className='txt'>{o.info}</View>
-          <Image src={o.cover} />
+          <View className='txt'>{o.description}</View>
+          <Image className='img' src={o.cover} />
         </View>
       )
     })
