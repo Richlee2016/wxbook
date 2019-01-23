@@ -13,6 +13,7 @@ export const wxPromise = (name, options) => {
 }
 
 export const BookGetRequest = async (url) => {
+  console.log(url)
   const res = await wxPromise('request', {
     url: 'http://192.168.15.32:7001' + '/book/proxy',
     method: 'POST',

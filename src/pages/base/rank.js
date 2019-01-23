@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Image } from '@tarojs/components'
+import { View, Image, NavigateTo } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { toJS } from 'mobx'
 import './index.less'
@@ -11,8 +11,9 @@ class Rank extends Component {
     navigationBarTitleText: '熊猫人之书城联盟'
   }
 
-  navigateTo (url) {
-    Taro.navigateTo({ url: url })
+  navigateTo (vod) {
+    console.log(`/rankvod?id=${vod.id}`)
+    Taro.navigateTo({ url: `rankvod?id=${vod.id}` })
   }
 
   componentDidMount () {
@@ -24,7 +25,7 @@ class Rank extends Component {
     const mapRanks = toJS(Rank).map(o => {
       const mapText = o.description.map((d, di) => <View key={di}>{di + 1}、{d}</View>)
       return (
-        <View className='rank-box' key={o.id}>
+        <View className='rank-box' onClick={this.navigateTo.bind(this, o)} key={o.id}>
           <Image className='rank-img' src={o.cover} />
           <View className='rank-txt'>
             {mapText}

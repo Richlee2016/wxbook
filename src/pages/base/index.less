@@ -56,6 +56,9 @@
 
 .recommend{
     padding-top: 120px;
+    .re-box{
+        padding-top: 60px;
+    }
     .rec-head{
         position: fixed;
         left: 0px;
@@ -78,6 +81,44 @@
             .active{
                 color: #4b99a7;
                 font-weight: 600;
+            }
+        }
+    }
+}
+.rankvod{
+    padding-top:100px;
+    .ran-head{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        background: white;
+        border-top: 2px solid #ddd;
+        .nav-box{
+            width: 480px;
+            display: flex;
+            margin: auto;
+            position: relative;
+            .rank-nav{
+                flex: 1;
+                text-align: center;
+                line-height: 80px;
+            }
+        }
+        .active-line{
+            width: 160px;
+            position: absolute;
+            bottom: 0px;
+            left:0px;
+            display: block;
+            height: 6px;
+            transition: 0.3s ease-in-out;
+            .line{
+                float: left;
+                width: 60%;
+                margin-left: 20%;
+                height: 6px;
+                background: #50c3d8;
             }
         }
     }

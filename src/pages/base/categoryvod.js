@@ -82,7 +82,9 @@ class Categoryvod extends Component {
             <View className='head'>{mapType}</View>
             <View className='clear-line' />
           </View>
-          <BlockBoxC data={dataBox} />
+          <View className='re-box'>
+            <BlockBoxC data={dataBox} />
+          </View>
         </Scroll>
       </View>
     )

@@ -14,6 +14,7 @@ const CATEGORYMODLE = {
     finish: []
   }
 }
+const RANKMODLE = { id: 0, start: 0, count: 10, isLower: false, list: [] }
 const DataBase = observable({
   // banner
   Banner: { id: 0, banner: '', description: '', isLower: false, list: [] },
@@ -27,7 +28,10 @@ const DataBase = observable({
   Recommend: { start: 0, count: 5, isLower: false, list: [] },
   CategoryVodList: [],
   CategoryGroups: { index: 0, group: [] },
-  CategoryVod: CATEGORYMODLE
+  CategoryVod: CATEGORYMODLE,
+  RankVodList: [],
+  RankGroup: { index: 0, group: [] },
+  RankVod: RANKMODLE
 })
 
 DataBase.FetchBanner = async function (id) {
@@ -129,6 +133,56 @@ DataBase.FetchCategoryVod = async function ({ id, type = 'click' }) {
       }
       vod.list[type] = list[type].concat(res.data)
       this.CategoryVod = vod
+    })
+  }
+}
+DataBase.SetRankGroup = function (index, group) {
+  console.log(index)
+  this.RankGroup.index = index
+  if (group) {
+    const [a, b, c] = group.split(',')
+    this.RankGroup.group = [b, c, a].map((o, i) => ({
+      id: o,
+      label: ['周榜', '月榜', '总榜'][i]
+    }))
+  }
+}
+DataBase.FetchRankVod = async function () {
+  const id = this.RankGroup.group[this.RankGroup.index].id
+  const haveVod = _.findIndex(this.RankVodList, ['id', id])
+  if (haveVod === -1) {
+    let vod = Object.assign(RANKMODLE, { id })
+    const { start, count } = vod
+    const res = await BookGetRequest(`/store/v0/fiction/rank?start=${start}&count=${count}&r=${id}`)
+    if (res.statusCode !== 200) return false
+    runInAction(() => {
+      if (res.data.length < count) {
+        vod.isLower = true
+      } else {
+        vod.start = start + count
+      }
+      vod.list = res.data
+      this.RankVod = vod
+      this.RankVodList.push(vod)
+    })
+  } else {
+    const vod = this.RankVodList[haveVod]
+    if (vod.isLower) {
+      this.RankVod = vod
+      return
+    }
+    const { start, count, list } = vod
+    const res = await BookGetRequest(`/store/v0/fiction/rank?start=${start}&count=${count}&r=${id}`)
+    if (res.statusCode !== 200) return false
+
+    runInAction(() => {
+      if (res.data.length < count) {
+        vod.isLower = true
+      } else {
+        vod.start = start + count
+      }
+      vod.list = list.concat(res.data)
+      this.RankVod = vod
     })
   }
 }
