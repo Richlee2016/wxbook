@@ -1,7 +1,7 @@
 import { observable, toJS, runInAction, flow } from 'mobx'
 import Taro from '@tarojs/taro'
 import MockData from './data'
-import { wxPromise } from './utils'
+import { wxPromise, BookGetRequest } from './utils'
 const HomeStore = observable({
   Data: MockData,
   GroupRecommend: { tab: 0, more: [0, 0] },
@@ -23,14 +23,24 @@ const HomeStore = observable({
   }
 })
 
+HomeStore.GetHomeData = async function () {
+  const res = await BookGetRequest(`/hs/v3/channel/418`)
+  if (res.statusCode !== 200) return false
+  runInAction(() => {
+    console.log(res)
+    this.Data = res.data
+  })
+}
+
 HomeStore.RecommendTab = function (type) {
   this.GroupRecommend.tab = type - 1
 }
-HomeStore.RecommendMore = function (type) {
+HomeStore.RecommendMore = function (data, type) {
   const { tab, more } = this.GroupRecommend
   if (type === 1) {
     this.GroupRecommend.more[tab] = (more[tab] + 1) % 3
   } else {
+    Taro.navigateTo({ url: `../../pages/base/channel?id=${tab === 0 ? 369 : 370}` })
     console.log('更多')
   }
 }
@@ -39,6 +49,7 @@ HomeStore.GirlTab = function (type) {
     const { girl } = this.Group
     this.Group.girl = (girl + 1) % 3
   } else {
+    Taro.navigateTo({ url: `../../pages/base/channel?id=370` })
     console.log('女生更多')
   }
 }
@@ -47,6 +58,7 @@ HomeStore.BoyTab = function (type) {
     const { boy } = this.Group
     this.Group.boy = (boy + 1) % 3
   } else {
+    Taro.navigateTo({ url: `../../pages/base/channel?id=369` })
     console.log('男生更多')
   }
 }

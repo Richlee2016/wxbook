@@ -75,7 +75,7 @@ class Categoryvod extends Component {
       )
     })
     return (
-      <View className='recommend'>
+      <View className='cate-vod'>
         <Scroll onLower={this.FetchScroll} isLower={CategoryVod.isLower}>
           <View className='rec-head'>
             <View className='head'>{mapGroup}</View>

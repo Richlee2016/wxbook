@@ -23,7 +23,7 @@ class Banner extends Component {
 
   render () {
     const { DataBase: { Channel } } = this.props
-    const mapChannel = Channel.list.map(o => {
+    const mapChannel = toJS(Channel).list.map(o => {
       return (
         <View className='home-box' key={o.referenceId}>
           <View className='clear-line' />

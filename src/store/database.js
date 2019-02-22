@@ -17,7 +17,7 @@ const CATEGORYMODLE = {
 const RANKMODLE = { id: 0, start: 0, count: 10, isLower: false, list: [] }
 const DataBase = observable({
   // banner
-  Banner: { id: 0, banner: '', description: '', isLower: false, list: [] },
+  Banner: { banner: '', description: '', list: [] },
   get BannerFalls () {
     return this.Banner.list
   },
@@ -35,25 +35,11 @@ const DataBase = observable({
 })
 
 DataBase.FetchBanner = async function (id) {
-  const count = 5
-  const { list, isLower } = this.Banner
-  if (isLower) return false
-  const start = list.length
-  const res = await BookGetRequest(`/store/v0/fiction/list/${id}?start=${start}&count=${count}`)
+  const res = await BookGetRequest(`/store/v0/fiction/list/${id}`)
+  console.log(res)
   if (res.statusCode !== 200) return false
   runInAction(() => {
-    if (start === 0 && this.Banner.id !== id) {
-      this.Banner = Object.assign(this.Banner, res.data)
-      this.Banner.id = id
-      this.Banner.isLower = false
-    } else {
-      if (res.data.list.length < count) {
-        this.Banner.isLower = true
-        this.Banner.list = list.concat(res.data.list)
-      } else {
-        this.Banner.list = list.concat(res.data.list)
-      }
-    }
+    this.Banner = res.data
   })
 }
 

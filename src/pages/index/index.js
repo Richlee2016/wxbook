@@ -17,8 +17,7 @@ class Index extends Component {
   }
 
   navigateTo (url) {
-    console.log(url)
-    // Taro.navigateTo({ url: url })
+    Taro.navigateTo({ url: url })
   }
   /** handle 处理 */
   RecommendTab = type => this.props.HomeStore.RecommendTab(type)
@@ -30,14 +29,15 @@ class Index extends Component {
   tolower () {
     console.log(321)
   }
-  componentDidMount () {
-    this.props.HomeStore.FallsDown()
+  async componentDidMount () {
+    await this.props.HomeStore.GetHomeData()
+    await this.props.HomeStore.FallsDown()
   }
   render () {
     const { HomeStore: { Data, Recommend, Girl, Boy, Falls } } = this.props
     const mapTopic = Data.topic.list.map(top => {
       return (
-        <Navigator key={top.referenceId} className='box'>
+        <Navigator key={top.referenceId} className='box' url={`../../pages/base/banner?id=${top.referenceId}`}>
           <Image className='img' src={top.img} />
         </Navigator>
       )
@@ -54,35 +54,40 @@ class Index extends Component {
     const banners = myswipre.imgUrls.map(ban => {
       return (
         <SwiperItem key={ban.img} className='swiper-item'>
-          <CoverImage src={ban.img} />
+          <CoverImage onClick={this.navigateTo.bind(this, `../../pages/base/banner?id=${ban.referenceId}`)} src={ban.img} />
         </SwiperItem>
       )
     })
     const barSet = [
       {
         icon: imgFree,
-        name: '免费'
+        name: '免费',
+        url: ''
       },
       {
         icon: imgGirl,
-        name: '女生'
+        name: '女生',
+        url: '../../pages/base/channel?id=370'
       },
       {
         icon: imgBody,
-        name: '男生'
+        name: '男生',
+        url: '../../pages/base/channel?id=369'
       },
       {
         icon: imgClassfy,
-        name: '分类'
+        name: '分类',
+        url: '../../pages/base/category'
       },
       {
         icon: imgRank,
-        name: '排行'
+        name: '排行',
+        url: '../../pages/base/rank'
       }
     ]
     const navBar = barSet.map((nav, index) => {
       return (
-        <Navigator className='bar-box' key={index}>
+        <Navigator className='bar-box' key={index} url={nav.url}>
           <CoverImage className='bar-icon'src={nav.icon} />
           <Text className='bar-text'>{nav.name}</Text>
         </Navigator>
@@ -108,7 +113,7 @@ class Index extends Component {
           <View className='home-box'>
             <Ctitle title='本周最火' />
             <BlockBoxA data={Data.hot} />
-            <Cmore btns={['查看更多']} onBtn={this.navigateTo} />
+            <Cmore btns={['查看更多']} onBtn={this.navigateTo.bind(this, '../../pages/base/banner?id=11059')} />
           </View>
 
           <View className='clear-line' />
@@ -142,7 +147,7 @@ class Index extends Component {
             <View className='home-topic'>
               {mapTopic}
             </View>
-            <Cmore btns={['更多精彩专题>>']} onBtn={this.navigateTo} />
+            <Cmore btns={['更多精彩专题>>']} onBtn={this.navigateTo.bind(this, '../../pages/base/recommend')} />
           </View>
           <View className='clear-line' />
           <BlockBoxC data={toJS(Falls)} />
