@@ -1,0 +1,1 @@
+<template name="0a2e9f90"><view class="_view 0a2e9f90 chapter-box"><view wx:key="i" key="{{i}}" bindtap="handleProxy" data-eventid="{{'0a2e9f90-0-'+i}}" data-comkey="{{$k}}" wx:for="{{List}}" wx:for-index="i" wx:for-item="o" class="_view 0a2e9f90 {{['dl', o.type]}}">{{o.text}}</view></view></template>

@@ -1,0 +1,1 @@
+<import src="/components/common/infoline.vue.wxml" /><template name="916393c4"><view class="_view 916393c4 block-box-b"><template wx:key="i" data="{{...$root['0'], ...$root[$kk+'916393c4-0-'+i],$root}}" is="db61536a" wx:for="{{List}}" wx:for-index="i" wx:for-item="info"></template></view></template>

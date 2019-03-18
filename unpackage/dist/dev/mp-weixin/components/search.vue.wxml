@@ -1,0 +1,1 @@
+<import src="/components/uni/uni-icon.vue.wxml" /><template name="39ab2303"><view class="_view 39ab2303 c-search"><view class="_view 39ab2303 s-icon"><template size="40" type="search" data="{{...$root['0'], ...$root[$kk+'39ab2303-0'],$root}}" is="f1cb32e0"></template></view><input class="_input 39ab2303 s-inp" type="text" confirm-type="search" value="" /></view></template>

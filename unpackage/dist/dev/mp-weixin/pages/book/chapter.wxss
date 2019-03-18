@@ -1,0 +1,20 @@
+.chapter-box {
+  background: #f5f5f5;
+}
+.chapter-box .dl {
+  background: white;
+  line-height: 80rpx;
+  padding: 0 40rpx;
+  border-top: #efeff0 1rpx solid;
+  font-size: 32rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+.chapter-box .dt {
+  text-align: center;
+  margin-top: 20rpx;
+}
+

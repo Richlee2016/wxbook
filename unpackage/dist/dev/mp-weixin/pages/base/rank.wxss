@@ -1,0 +1,19 @@
+.rank-box {
+  padding: 20rpx;
+  border-bottom: #ddd 2rpx solid;
+  overflow: hidden;
+}
+.rank-box .rank-img {
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+}
+.rank-box .rank-txt {
+  float: left;
+  width: 510rpx;
+  padding-left: 20rpx;
+  color: #666;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+

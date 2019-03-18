@@ -1,0 +1,1 @@
+<template name="efb57f04"><view class="_view efb57f04 c-book-more"><view class="_view efb57f04 btn" wx:key="i" key="{{i}}" bindtap="handleProxy" data-eventid="{{'efb57f04-0-'+i}}" data-comkey="{{$k}}" wx:for="{{btns}}" wx:for-index="i" wx:for-item="btn">{{btn.name}}</view></view></template>

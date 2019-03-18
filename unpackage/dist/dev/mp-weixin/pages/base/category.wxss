@@ -1,0 +1,27 @@
+.category-box {
+  overflow: hidden;
+}
+.category-box .cate-vod {
+  padding: 10rpx;
+  width: 355rpx;
+  height: 200rpx;
+  float: left;
+  position: relative;
+}
+.category-box .cate-img {
+  width: 100%;
+  height: 100%;
+}
+.category-box .cate-txt {
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 40rpx;
+}
+
+.category {
+  overflow: hidden;
+}
+

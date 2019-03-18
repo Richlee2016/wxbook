@@ -1,0 +1,32 @@
+.cate-vod {
+  padding-top: 40rpx;
+}
+.cate-vod .re-box {
+  padding-top: 60rpx;
+}
+.cate-vod .rec-head {
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  background: white;
+}
+.cate-vod .rec-head .head:nth-of-type(2) {
+  margin-bottom: 20rpx;
+}
+.cate-vod .rec-head .head {
+  padding: 0rpx 20rpx;
+  font-size: 28rpx;
+}
+.cate-vod .rec-head .head .hbox {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 8rpx;
+}
+.cate-vod .rec-head .head .active {
+  color: #4b99a7;
+  font-weight: 600;
+}
+

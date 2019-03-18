@@ -1,0 +1,1 @@
+<import src="/components/scroll.vue.wxml" /><template name="16d958f2"><view class="_view 16d958f2 context-box"><template bindToLower="handleProxy" data-eventid="{{'16d958f2-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'16d958f2-0'],$root, $slotdefault:'16d958f2-default-16d958f2-0'}}" is="3996a428"></template></view></template>

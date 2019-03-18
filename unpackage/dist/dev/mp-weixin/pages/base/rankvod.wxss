@@ -1,0 +1,47 @@
+.rankvod {
+  padding-top: 100rpx;
+}
+.rankvod .ran-head {
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  background: white;
+  border-top: 2rpx solid #ddd;
+}
+.rankvod .ran-head .nav-box {
+  width: 480rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  position: relative;
+}
+.rankvod .ran-head .nav-box .rank-nav {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  line-height: 80rpx;
+}
+.rankvod .ran-head .active-line {
+  width: 160rpx;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  display: block;
+  height: 6rpx;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.rankvod .ran-head .active-line .line {
+  float: left;
+  width: 60%;
+  margin-left: 20%;
+  height: 6rpx;
+  background: #50c3d8;
+}
+

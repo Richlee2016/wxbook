@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/base/banner",
+    "pages/base/category",
+    "pages/base/categoryvod",
+    "pages/base/channel",
+    "pages/base/rank",
+    "pages/base/rankvod",
+    "pages/base/recommend",
+    "pages/book/index",
+    "pages/book/chapter",
+    "pages/book/context"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}

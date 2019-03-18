@@ -1,0 +1,114 @@
+.book .b-head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60rpx;
+  width: 100%;
+}
+.book .b-head .left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.book .b-head .left .img {
+  width: 190rpx;
+  height: 250rpx;
+}
+.book .b-head .right {
+  text-align: left;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.book .b-head .right .h1 {
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+.book .b-head .right .label {
+  line-height: 48rpx;
+  font-size: 24rpx;
+  color: #4b99a7;
+}
+.book .b-head .right .span {
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: #727272;
+}
+.book .chp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40rpx;
+}
+.book .chp .btnbox {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.book .chp .btn {
+  width: 90%;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 28rpx;
+}
+.book .chp .chapter {
+  color: white;
+  background: #f35d02;
+  border: #f35d02 1rpx solid;
+}
+.book .chp .history {
+  color: #ddd;
+  background: white;
+  border: #ddd 1rpx solid;
+}
+.book .infor {
+  margin: 20rpx 40rpx;
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 40rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.book .newest {
+  border-top: #dddddd 1rpx solid;
+  text-align: center;
+  line-height: 80rpx;
+  color: #666666;
+  font-size: 30rpx;
+}
+.book .types {
+  padding: 34rpx 40rpx;
+}
+.book .types .h1 {
+  color: #666666;
+  font-size: 32rpx;
+}
+.book .types .ul {
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.book .types .ul .li {
+  display: inline-block;
+  padding: 10rpx 40rpx;
+  border: #ddd 1rpx solid;
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.book .associated .h1 {
+  padding-left: 40rpx;
+  color: #666666;
+  font-size: 32rpx;
+}
+
