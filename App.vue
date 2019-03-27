@@ -13,6 +13,8 @@
 </script>
 
 <style lang="less">
-	@import './common/style/uni.css';
+	@import './common/color/colorui.css';
+	@import './common/color/icon.css';
+	// @import './common/style/uni.css';
 	@import './common/style/main.less';
 </style>

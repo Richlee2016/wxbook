@@ -1,14 +1,26 @@
 <template>
 	<view class="index">
 		<v-scroll @ToLower="FallsDown">
-			<v-search />
+			<view class="cu-bar bg-cyan search">
+				<view class="search-form radius">
+					<text class="icon-search"></text>
+					<input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="搜索图片、文章、视频"
+					 confirm-type="search"></input>
+				</view>
+				<view class="action">
+					<text class="icon-close"></text>
+					<text>取消</text>
+				</view>
+			</view>
 			<!-- 轮播图 -->
-			<swiper class="swiper-box" :indicator-dots="myswipre.indicatorDots" :autoplay="myswipre.autoplay" :interval="myswipre.interval"
-			 :duration="myswipre.duration">
-				<swiper-item class="swiper-item" v-for="ban in Data.banner" :key="ban.img">
-					<image class="img" :src="ban.img" mode="scaleToFill"></image>
-				</swiper-item>
-			</swiper>
+			<view class="swiper-box">
+				<swiper class="screen-swiper square-dot" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000"
+				 duration="500">
+					<swiper-item class="swiper-item" v-for="(ban,index) in Data.banner" :key="ban.img">
+						<image class="img" :src="ban.img" mode="scaleToFill"></image>
+					</swiper-item>
+				</swiper>
+			</view>
 			<!-- 导航 -->
 			<view class="nav-bar">
 				<navigator class="bar-box" v-for="(nav,i) in NavBarConf" :url="nav.url" :key="i">
@@ -118,7 +130,13 @@
 		},
 		methods: {
 			...mapActions('Home', ['GetHomeData', 'FallsDown']),
-			...mapMutations('Home', ['RECOMMEND_MORE', 'RECOMMEND_TAB', 'PERSON_TAB'])
+			...mapMutations('Home', ['RECOMMEND_MORE', 'RECOMMEND_TAB', 'PERSON_TAB']),
+			InputFocus(e) {
+				this.InputBottom = e.detail.height
+			},
+			InputBlur(e) {
+				this.InputBottom = 0
+			}
 		},
 		async onLoad() {
 			await this.GetHomeData()
@@ -129,12 +147,9 @@
 
 <style lang="less">
 	.swiper-box {
+		overflow: hidden;
+		margin: 20upx 0px;
 		height: 360upx;
-
-		.img {
-			width: 100%;
-			height: 100%;
-		}
 	}
 
 	.nav-bar {
