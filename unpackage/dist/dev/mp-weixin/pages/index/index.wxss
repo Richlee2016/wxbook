@@ -30,7 +30,7 @@
 
 .block-box-b .line {
   width: 100%;
-  height: 48rpx;
+  height: 96rpx;
   padding: 24rpx 20rpx;
   line-height: 48rpx;
   border-bottom: 2rpx solid #f0f0f0;
@@ -52,6 +52,12 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
+.menu-bar {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
 .swiper-box {
   overflow: hidden;
   margin: 20rpx 0px;

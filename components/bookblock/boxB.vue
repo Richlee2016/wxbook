@@ -54,7 +54,7 @@
 	.block-box-b {
 		.line {
 			width: 100%;
-			height: 48upx;
+			height: 96upx;
 			padding: 24upx 20upx;
 			line-height: 48upx;
 			border-bottom: 2upx solid #f0f0f0;

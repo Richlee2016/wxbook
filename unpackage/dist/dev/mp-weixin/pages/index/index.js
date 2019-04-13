@@ -239,6 +239,27 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _index = __webpack_require__(/*! ../../config/index */ "E:\\2019Rich\\vue\\vue-weapp\\wxbook\\config\\index.js");
 
 
@@ -504,7 +525,7 @@ var render = function() {
                 attrs: {
                   "adjust-position": false,
                   type: "text",
-                  placeholder: "搜索图片、文章、视频",
+                  placeholder: "书名、作者",
                   "confirm-type": "search",
                   eventid: "04d05bcc-0"
                 },
@@ -512,8 +533,7 @@ var render = function() {
               })
             ]),
             _c("view", { staticClass: "action" }, [
-              _c("text", { staticClass: "icon-close" }),
-              _c("text", [_vm._v("取消")])
+              _c("text", [_vm._v("搜索")])
             ])
           ]),
           _c(
@@ -673,10 +693,10 @@ var render = function() {
             ],
             1
           ),
-          _c("view", { attrs: { className: "clear-line" } }),
+          _c("view", { staticClass: "clear-line" }),
           _c(
             "view",
-            { attrs: { className: "home-box" } },
+            { staticClass: "home-box" },
             [
               _c("c-title", {
                 attrs: { title: "限时免费", mpcomid: "04d05bcc-13" }
@@ -738,19 +758,49 @@ var render = function() {
           ),
           _c("view", { staticClass: "clear-line" }),
           _c("View", {
-            attrs: { className: "clear-line", mpcomid: "04d05bcc-18" }
+            staticClass: "clear-line",
+            attrs: { mpcomid: "04d05bcc-18" }
           }),
           _c("block-box-c", {
             attrs: { List: _vm.Falls, mpcomid: "04d05bcc-19" }
           })
         ],
         1
-      )
+      ),
+      _vm._m(0)
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "menu-bar cu-bar tabbar bg-white" }, [
+      _c("view", { staticClass: "action" }, [
+        _c("view", { staticClass: "icon-homefill" }),
+        _c("view", { staticClass: "text-green" }, [_vm._v("主页")])
+      ]),
+      _c("view", { staticClass: "action" }, [
+        _c("view", { staticClass: "icon-similar" }),
+        _c("view", { staticClass: "text-gray" }, [_vm._v("分类")])
+      ]),
+      _c("view", { staticClass: "action" }, [
+        _c("view", { staticClass: "icon-cart" }, [
+          _c("view", { staticClass: "cu-tag badge" }, [_vm._v("99")])
+        ]),
+        _c("view", { staticClass: "text-gray" }, [_vm._v("排行")])
+      ]),
+      _c("view", { staticClass: "action" }, [
+        _c("view", { staticClass: "icon-my" }, [
+          _c("view", { staticClass: "cu-tag badge" })
+        ]),
+        _c("view", { staticClass: "text-gray" }, [_vm._v("我的")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

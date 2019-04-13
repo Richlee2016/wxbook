@@ -4,12 +4,11 @@
 			<view class="cu-bar bg-cyan search">
 				<view class="search-form radius">
 					<text class="icon-search"></text>
-					<input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="搜索图片、文章、视频"
-					 confirm-type="search"></input>
+					<input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="书名、作者" confirm-type="search"></input>
 				</view>
 				<view class="action">
-					<text class="icon-close"></text>
-					<text>取消</text>
+					<!-- <text class="icon-close"></text> -->
+					<text>搜索</text>
 				</view>
 			</view>
 			<!-- 轮播图 -->
@@ -60,8 +59,8 @@
 				<c-more :btns="[{name:'换一换',sex:1}, {name:'男生频道>>',sex:1}]" @onBtn="PERSON_TAB" />
 			</view>
 			<!-- 限时免费 -->
-			<view className='clear-line' />
-			<view className='home-box'>
+			<view class='clear-line' />
+			<view class='home-box'>
 				<c-title title='限时免费' />
 				<block-box-a :List="Data.free.list"></block-box-a>
 				<c-more :btns="[{name:'更多限免佳作>>'}]" />
@@ -79,9 +78,31 @@
 			</view>
 			<!-- 瀑布流 -->
 			<view class='clear-line' />
-			<View className='clear-line' />
+			<View class='clear-line' />
 			<block-box-c :List="Falls" />
 		</v-scroll>
+		<view class="menu-bar cu-bar tabbar bg-white">
+			<view class="action">
+				<view class="icon-homefill"></view>
+				<view class="text-green">主页</view>
+			</view>
+			<view class="action">
+				<view class="icon-similar"></view>
+				<view class="text-gray">分类</view>
+			</view>
+			<view class="action">
+				<view class="icon-cart">
+					<view class="cu-tag badge">99</view>
+				</view>
+				<view class="text-gray">排行</view>
+			</view>
+			<view class="action">
+				<view class="icon-my">
+					<view class="cu-tag badge"></view>
+				</view>
+				<view class="text-gray">我的</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -146,6 +167,12 @@
 </script>
 
 <style lang="less">
+	.menu-bar{
+		position:fixed;
+		left:0px;
+		bottom:0px;
+		width:100%;
+	}
 	.swiper-box {
 		overflow: hidden;
 		margin: 20upx 0px;
